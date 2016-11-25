@@ -1,0 +1,141 @@
+
+/* Make clicks pass-through */
+#loading-bar,
+#loading-bar-spinner {
+  pointer-events: none;
+  -webkit-pointer-events: none;
+  -webkit-transition: 350ms linear all;
+  -moz-transition: 350ms linear all;
+  -o-transition: 350ms linear all;
+  transition: 350ms linear all;
+}
+
+#loading-bar.ng-enter,
+#loading-bar.ng-leave.ng-leave-active,
+#loading-bar-spinner.ng-enter,
+#loading-bar-spinner.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+#loading-bar.ng-enter.ng-enter-active,
+#loading-bar.ng-leave,
+#loading-bar-spinner.ng-enter.ng-enter-active,
+#loading-bar-spinner.ng-leave {
+  opacity: 1;
+}
+
+/* loadBar instead of ionic bar */
+
+#loading-bar .loadbar {
+ -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+	
+  background: #b91f1f;
+  position: fixed;
+  z-index: 10002;
+ /* top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-bottom-right-radius: 1px;
+  border-top-right-radius: 1px;*/
+  
+  height: 2px;
+  display: block;
+  width: 100%;
+  border-radius: 1px;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
+  
+  background-image: -moz-linear-gradient(top,
+    rgba(255,255,255,0.2) 0%,
+    rgba(255,255,255,0.1) 45%,
+    rgba(0,0,0,0.2) 55%,
+    rgba(0,0,0,0.1) 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom,
+    color-stop(0%,rgba(255,255,255,0.2)),
+    color-stop(45%,rgba(255,255,255,0.1)),
+    color-stop(55%,rgba(0,0,0,0.2)),
+    color-stop(100%,rgba(0,0,0,0.1)));
+  background-image: -webkit-linear-gradient(top,
+    rgba(255,255,255,0.5) 0%,
+    rgba(255,255,255,0.1) 45%,
+    rgba(0,0,0,0.2) 55%,
+    rgba(0,0,0,0.1) 100%);
+  background-image: -o-linear-gradient(top,
+    rgba(255,255,255,0.2) 0%,
+    rgba(255,255,255,0.1) 45%,
+    rgba(0,0,0,0.2) 55%,
+    rgba(0,0,0,0.1) 100%);
+  background-image: -ms-linear-gradient(top,
+    rgba(255,255,255,0.2) 0%,
+    rgba(255,255,255,0.1) 45%,
+    rgba(0,0,0,0.2) 55%,
+    rgba(0,0,0,0.1) 100%);
+  background-image: linear-gradient(to bottom,
+    rgba(255,255,255,0.2) 0%,
+    rgba(255,255,255,0.1) 45%,
+    rgba(0,0,0,0.2) 55%,
+    rgba(0,0,0,0.1) 100%);
+}
+}
+
+/* Fancy blur effect */
+#loading-bar .peg {
+  
+  -moz-box-shadow: #b91f1f 1px 0 6px 1px;
+  -ms-box-shadow: #b91f1f 1px 0 6px 1px;
+  -webkit-box-shadow: #b91f1f 1px 0 6px 1px;
+  box-shadow: #b91f1f 1px 0 6px 1px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+ }
+
+#loading-bar-spinner {
+  display: block;
+  position: fixed;
+  z-index: 10002;
+  top: 10px;
+  left: 10px;
+}
+
+#loading-bar-spinner .spinner-icon {
+  width: 14px;
+  height: 14px;
+
+  border:  solid 2px transparent;
+  border-top-color:  #b91f1f;
+  border-left-color: #b91f1f;
+  border-radius: 50%;
+
+  -webkit-animation: loading-bar-spinner 400ms linear infinite;
+  -moz-animation:    loading-bar-spinner 400ms linear infinite;
+  -ms-animation:     loading-bar-spinner 400ms linear infinite;
+  -o-animation:      loading-bar-spinner 400ms linear infinite;
+  animation:         loading-bar-spinner 400ms linear infinite;
+}
+
+@-webkit-keyframes loading-bar-spinner {
+  0%   { -webkit-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-moz-keyframes loading-bar-spinner {
+  0%   { -moz-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-o-keyframes loading-bar-spinner {
+  0%   { -o-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -o-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-ms-keyframes loading-bar-spinner {
+  0%   { -ms-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@keyframes loading-bar-spinner {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

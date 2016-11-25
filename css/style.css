@@ -1,0 +1,59 @@
+/* Empty. Add your own CSS if you like */
+@import url(https://fonts.googleapis.com/css?family=Abel:400,700,300);
+@import url(https://fonts.googleapis.com/css?family=Economica:400,700,300);
+
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+  	font-family: Abel, helvetica, arial, sans-serif;
+  }
+h1{
+  	font-family: Abel, helvetica, arial, sans-serif;
+}
+h2{
+  	font-family: Abel, helvetica, arial, sans-serif;
+}
+h3{
+  	font-family: Abel, helvetica, arial, sans-serif;
+}
+h4{
+  	font-family: Abel, helvetica, arial, sans-serif;
+}
+
+.fixed-outside{
+  position: absolute;
+  bottom: 0;
+  color:white;
+  width: 100%;
+  height:  120px;
+  text-align:center;
+}
+
+/*.buttonbg{
+  background: #4e8ef7 url(/img/pattern.png) repeat center center !important;
+}*/
+
+.has-bottom .scroll{
+  padding-bottom:120px !important;
+}
+
+/*
+ * http://docs.angularjs.org/api/ng/directive/ngShow#usage_animations
+ */
+.list .item.item-accordion {
+  line-height: 48px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: .09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
+.lt .t1 { float:right }
+.lt .t2 { float:left }
+
+/*  */
