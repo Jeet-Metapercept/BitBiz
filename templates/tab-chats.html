@@ -1,0 +1,58 @@
+<ion-view view-title="Live Rate" hide-nav-bar="false">
+
+  <ion-content overflow-scroll="false">
+    <ion-refresher spinner="android" pulling-text="Pull to refresh" on-refresh="doRefresh()"></ion-refresher>
+    <!--<ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <img ng-src="{{chat.face}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>-->
+    <div style="background-color:#2d3237; height: 125px;" class="item">
+      <div style="display: flex; align-items: center; justify-content: center; line-height:10em">
+        <h1 class="padding" style="text-align:center">&nbsp;$ {{coindeskrateTicker}}  </h1>
+      </div>
+
+      <div style="display: flex; justify-content: center; margin-top:0px">
+        <p><i style="" class="light ion-stats-bars"> </i>Since Yesterday <i class="assertive ion-ios-arrow-thin-down"></i><i class="balanced ion-ios-arrow-thin-up"></i> : <span class="balanced" ng-show="up">{{change}}</span><span ng-show="down" class="assertive">{{change}}</span>
+          <span>
+              <i ng-show="up"  class="ion-android-arrow-up balanced"></i>
+              <i ng-show="down"  class="ion-android-arrow-down assertive"></i>
+        </p>
+     </span>
+      </div>
+    </div>
+    <ion-list>
+      <div ng-repeat="group in groups">
+        <ion-item class="item-avatar item-icon-right item-stable" href="#/tab/chats/{{group.id}}" ng-class="{active: isGroupShown(group)}">
+          <img ng-src="{{group.face}}">
+          <div style="padding-top: 9px;" class="lt">
+            <span class="t2"> &nbsp;{{resolveText(group.name)}}</span>
+            <span class="t1"> &nbsp; {{resolveText(group.currentrate)}}&nbsp;
+                        </span>
+            <i class="icon ion-ios-arrow-right icon-accessory"></i>
+
+          </div>
+          <ion-option-button class="button-assertive" ng-click="toggleGroup(group)">
+            <i class="icon" ng-class="isGroupShown(group) ? 'ion-ios-minus-empty' : 'ion-android-arrow-dropdown'"></i>
+          </ion-option-button>
+          <ion-option-button class="button-positive" ng-disabled="betDelay" ng-click="doRefresh();">
+            <i class="icon ion-ios-loop-strong"></i>
+          </ion-option-button>
+        </ion-item>
+        <ion-item style="background-color:#40474f" class="item-accordion" ng-repeat="item in group.items" ng-show="isGroupShown(group)">
+          <div style="font-size:13px" class="lt">
+            <span class="t2">  {{resolveText(item.subName)}}</span>
+            <span class="t1">  {{resolveText(item.subId)}} </span>
+        </ion-item>
+        </div>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

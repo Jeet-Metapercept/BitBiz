@@ -1,0 +1,45 @@
+<ion-view view-title="Account">
+  <ion-content overflow-scroll="false">
+    <ion-list>
+      <ion-toggle ng-model="settings.enableFriends">
+        Enable Account
+      </ion-toggle>
+      <ion-item>More</ion-item>
+      <div class="item item-divider"> Item with icon </div>
+      <a class="item item-icon-right"> 2: Awareness <i class="icon ion-checkmark-round balanced"></i></a>
+      <div class="item item-divider"> Diabled Item </div>
+      <a class="item item-icon-right" ng-disabled="1"> 2: Awareness <i class="icon ion-checkmark-round balanced"></i></a>
+      <label class="item item-input">
+        <input type="text" placeholder="First Name"> </label>
+      <label class="item item-input">
+        <textarea placeholder="Comments"></textarea>
+      </label>
+    </ion-list>
+  </ion-content>
+
+  <div class="fixed-outside">
+    <div class="row">
+      <div class="col">
+        <button class="button button-small button-circle button-energized icon ion-social-twitter"></button>
+      </div>
+      <div class="col">
+        <button class="button button-small button-circle button-positive icon ion-social-facebook"></button>
+      </div>
+      <div class="col">
+        <button class="button button-small button-stable ">S†åR</button>
+      </div>
+      <div class="col">
+        <button class="button button-small button-circle button-assertive icon ion-social-googleplus"></button>
+      </div>
+      <div class="col">
+        <button class="button button-small button-circle button-royal icon ion-social-github"></button>
+      </div>
+
+    </div>
+    <div class="row">
+    </div>
+
+  </div>
+
+
+</ion-view>

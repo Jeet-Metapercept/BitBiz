@@ -1,0 +1,43 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{group.name}}">
+  <ion-content class="padding" overflow-scroll="false">
+    <h2 align="center">
+        {{group.name}}
+    </h2>
+    <img class="padding-top" ng-src="{{group.face}}" style="width: 20%; height: 20%; display: block;  margin: 0 auto;">
+
+
+
+    <div ng-controller="GroupDetailCtrl">
+
+      <h4 align="center"> Currency Live Rate </h4>
+      <div><span>Base Currency : </span><span><select class="item bar padding" ng-model="currencyIndex"><span></div>
+            <option>INR</option>
+            <option>USD</option>
+            <option>GBP</option>
+        </select>
+
+      <div class="padding">
+        <!--  <input class="" type="text" ng-model="amount"  /> -->
+        <p>{{ amtUsd | USD }}</p>
+        <p>{{ amtInr | INR}}</p>
+        <p>{{ amtGbp | GBP}}</p>
+      </div>
+
+
+    </div>
+   <div class="" style="padding-top: 60px">
+      <img class="padding-top" src="http://www.under-development.co/img/bts_logo.png" style="width: 80%; height: 100%; display: block;  margin: 0 auto;opacity:0.1;filter:alpha(opacity=40);"/>
+    </div>
+
+
+
+
+
+  </ion-content>
+</ion-view>
